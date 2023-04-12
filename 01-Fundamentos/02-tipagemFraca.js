@@ -9,5 +9,5 @@ console.log(typeof qualquer);
 /**
  * Evitar nomes genéricos:
  * Exemplo: i, j, k
- *  numero, valor, abc
+ *  numero, valor, abc+
  */
