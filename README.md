@@ -1,1 +1,1 @@
-# typescript-estudos
+javascript e typescript-estudos
