@@ -19,9 +19,12 @@ console.log(pessoa.nome, pessoa.idade, pessoa.ola());
 // Class
 class Animal {}
 class Cachorro extends Animal {
-  falar() {
-    return "Au au";
+  constructor() {
+    super();
+    this.bark = "Au au";
   }
+
+  falar() { return this.bark; }
 }
 
 console.log(new Cachorro().falar());

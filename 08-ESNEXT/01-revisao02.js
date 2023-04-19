@@ -19,10 +19,10 @@ log();
 log("Hello World!");
 
 // Operador rest
-function total(...numeros) {
+function somarRest(...numeros) {
   let total = 0;
   numeros.forEach((numero) => total += numero);
   return total;
 }
 
-console.log(total(1, 2, 3, 4));
+console.log(somarRest(1, 2, 3, 4));
