@@ -23,25 +23,23 @@ const getTurma = (letra) => {
   });
 };
 
-//
-// const nomes = [];
-// getTurma("A").then((alunosA) => {
-//   alunosA.forEach((a) => nomes.push(`A: ${a.nome}`));
-//   // console.log(nomes);
-//   getTurma("B").then((alunosB) => {
-//     alunosB.forEach((b) => nomes.push(`B: ${b.nome}`));
-//     // console.log(nomes);
-//     getTurma("A").then((alunosC) => {
-//       alunosC.forEach((c) => nomes.push(`C: ${c.nome}`));
-//       // console.log(nomes);
-//     });
-//   });
-// });
-//
+// Recurso do ES8
+// Objetivo de simplificar o uso de promises...
+const obterAlunos = async () => {
+  const turmaA = await getTurma("A");
+  const turmaB = await getTurma("B");
+  const turmaC = await getTurma("C");
+  const result = [...turmaA, ...turmaB, ...turmaC];
+  return result;
+}; // retorna um objeto AsyncFunction
 
-Promise.all([getTurma("A"), getTurma("B"), getTurma("C")])
-  .then((turmas) => [].concat(...turmas))
+obterAlunos()
   .then((alunos) => alunos.map((aluno) => aluno.nome))
   .then((nomes) => console.log(nomes));
 
-getTurma("D").catch((e) => console.log(e.message));
+const printAlunos = async () => {
+  const alunos = await obterAlunos();
+  console.log(alunos);
+};
+
+printAlunos();
