@@ -1,0 +1,27 @@
+*
+
+nome-do-elemento
+
+.classe
+
+#id
+
+[atrib]
+
+:pseudo-classe
+
+::pseudo-elementos
+
+
+combinando seletores:
+// adjacent sibling
+  div + p {}
+
+// general sibling
+div ~ p
+
+// child
+div > p 
+
+// descendant
+div p
